@@ -79,10 +79,14 @@ function printQuote(){
   var displayQuote = "";
   displayQuote += '<p class="quote">' + randomQuote.quote +'</p>';
   displayQuote += '<p class="source">' +  randomQuote.source;
-  if(){}
-  displayQuote += '<span class="citation">' + randomQuote.citation + '</span>';
-  if(){}
-  displayQuote += '<span class="year">' + randomQuote.year + '</span>';
+
+  if (randomQuote.citation){
+      displayQuote += '<span class="citation">' + randomQuote.citation + '</span>';
+  }
+  if ( randomQuote.year){
+      displayQuote += '<span class="year">' + randomQuote.year + '</span>';
+
+  }
   displayQuote += '</p>';
   
 
@@ -108,8 +112,6 @@ printQuote();
    - Don't forget to close that final `p` tag.
    - Set the `innerHTML` of the `quote-box` div to the HTML string. 
 ***/
-
-
 
 
 /***
