@@ -68,33 +68,37 @@ var quotes = [
 
 
 function getRandomQuote(){
-  
+  // generate a random number between 0 and the last index in the array parameter
   var randomNumber = Math.floor( Math.random() * quotes.length);
   var randomQuote = quotes[randomNumber];
   return randomQuote;
 }
 
 function printQuote(){
+   // create a variable that calls the getRandomQuote() function
   var randomQuote = getRandomQuote()
   var displayQuote = "";
   displayQuote += '<p class="quote">' + randomQuote.quote +'</p>';
   displayQuote += '<p class="source">' +  randomQuote.source;
-
+// if there is a quote.citation property, add it the string
   if (randomQuote.citation){
       displayQuote += '<span class="citation">' + randomQuote.citation + '</span>';
   }
+  // if there is a quote.year property, add it the string
   if ( randomQuote.year){
       displayQuote += '<span class="year">' + randomQuote.year + '</span>';
   }
   displayQuote += '</p>';
   
 
+// set the innnerHTML of the .quote-box to the complete HTML string
   var gotQuote = document.getElementById('quote-box');
   gotQuote.innerHTML = displayQuote;
  
 }
 
-printQuote();
+window.setInterval(printQuote, 20000);
+
 
 /***
   Create the `printQuote` function to: 
